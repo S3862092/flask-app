@@ -3,26 +3,26 @@ from tabnanny import check
 from flask import Flask, render_template, url_for, request, redirect
 import pymysql
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def homePage():
     return render_template("home.html")
 
-@app.route('/about', methods=['GET'])
+@application.route('/about', methods=['GET'])
 def aboutPage():
     return render_template("about.html")
     
-@app.route('/cakes', methods=['GET'])
+@application.route('/cakes', methods=['GET'])
 def cakesPage():
     return render_template("cakes.html")
 
-@app.route('/contact', methods=['GET'])
+@application.route('/contact', methods=['GET'])
 def contactPage():
     return render_template("contact.html")
 
 
-@app.route('/orderNow')
+@application.route('/orderNow')
 def home():
     return render_template("orderNow.html")
 
@@ -75,7 +75,7 @@ def checkUserPassword(cursor, phoneNumber):
     else:
         return False
 
-@app.route('/result',methods=['POST', 'GET'])
+@application.route('/result',methods=['POST', 'GET'])
 def result():
     output = request.form.to_dict()
     print("OUTPUT:",output)
@@ -95,4 +95,4 @@ def result():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    application.run(debug=True)

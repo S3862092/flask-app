@@ -62,15 +62,22 @@ def checkUserExist(cursor, phoneNumber):
     else:
         return False
     
-def checkUserPassword(cursor, phoneNumber):
+def checkUserPassword(cursor, phoneNumber, password):
     cursor.execute('use store')
     sql = '''
     SELECT password 
     FROM users
-    WHERE phoneNumber = ''' + phoneNumber
-    cur = cursor.execute(sql)
-    cur = cursor.execute(sql)
-    if cur == 1:
+    WHERE phoneNumber = %s''' 
+    cursor.execute(sql, (phoneNumber))
+    row = cursor.fetchone()
+    actualPassword = ""
+    while row is not None:
+        actualPassword = row
+        row = cursor.fetchone()
+
+    actualPasswordStr = actualPassword[0]
+
+    if password == actualPasswordStr:
         return True
     else:
         return False
@@ -86,7 +93,7 @@ def result():
     db = connectToRDS()
     cursor = db.cursor()
 
-    if checkUserExist(cursor, phoneNumber) == True and checkUserPassword(cursor, phoneNumber) == True:
+    if checkUserExist(cursor, phoneNumber) == True and checkUserPassword(cursor, phoneNumber, password) == True:
         insertNewOrder(db, cursor, phoneNumber, cake)
         return render_template('success.html')
     else:

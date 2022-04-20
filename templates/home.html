@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Po's Bakery</title>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet"> 
+
+        <link rel="stylesheet" type="text/css" href="../static/css/home.css"/>
+    </head>
+    <!--images from:
+        home: https://pixabay.com/images/search/cake/
+        david-holifield: https://unsplash.com/photos/kPxsqUGneXQ
+        heather-barnes: https://unsplash.com/photos/_TN1m5R1pFI
+        mango_forest: https://pixabay.com/photos/cake-torte-dessert-sweet-fruit-1284548/
+        alex_lvrs: https://unsplash.com/photos/aX_ljOOyWJY
+        alexandra-gornago: https://unsplash.com/photos/_B7shfNUXEA
+        nishant: https://www.pexels.com/photo/close-up-photo-of-chocolate-cupcake-2955818/
+        pham-thanh-dat: https://www.pexels.com/photo/cheese-cake-with-sliced-orange-fruits-and-blueberries-on-wooden-chopping-board-4413773/
+        regina_ferraz: https://www.pexels.com/photo/cheesecake-with-fresh-fruit-toppings-6133359/
+    -->
+    <body>
+        <div class="topnav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/cakes">Cakes</a>
+            <a href="/contact">Contact Us</a>
+        </div> 
+        <img src="{{url_for('static', filename='images/home.jpg')}}"> 
+        <div class="introductory">
+            <p>
+                <b>Welcome to Po's Bakery!</b></br>
+                </br>
+                Here at Po's bakery, we strive for creativity and perfection! Our chefs and staff will ensure that your safety and satisfaction 
+                remains as our top priority. 
+                </br></br>
+                Head over to our cake section to browse through the variety of cakes that we offer. As soon as you book a cake, our chefs will prepare
+                immediately for collection. </br>What are you waiting for? Order now and get it fresh!
+            </p>
+        </div>
+    </body>
+
+
+</html>

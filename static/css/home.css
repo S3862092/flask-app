@@ -1,0 +1,39 @@
+body {
+  width: 100%;
+  font-family: 'Arvo', serif;
+}
+
+/* Style the nav bar color */
+.topnav{
+  background: color rgb(255, 255, 255);
+  width: 100%
+}
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #f9eec5;
+  color: black;
+}
+
+.home_image {
+  background-image: url("home.jpg");
+  width: 100vw;
+  height: 90vh;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+} 
+
+.introductory{
+  font-size: 17px;
+  font-family: 'Arvo', serif;
+}

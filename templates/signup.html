@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <head>
+        <title>Sign Up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form  action="/result" method="POST">
+            {% if phoneNumber %}
+                <center>
+                    <h3 style="color: blue;" class="let_space"></h3>
+                </center> 
+
+            {% endif %}
+            
+            <label for="phoneNumber">Enter your phone number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber">
+            </br>
+            </br>
+            {% if username %}
+                <center>
+                    <h3 style="color: blue;" class="let_space"></h3>
+                </center>
+
+            {% endif %}
+            </br>
+            </br>
+            <label for="password">Enter your Username:</label>
+            <input type="text" id="password" name="password">
+            {% if password %}
+                <center>
+                    <h3 style="color: blue;" class="let_space"></h3>
+                </center>
+
+            {% endif %}
+
+            <label for="password">Enter your password:</label>
+            <input type="text" id="password" name="password">
+            </br>
+            </br>
+    </body>
+</html>

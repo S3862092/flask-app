@@ -1,0 +1,68 @@
+{
+    "items": [
+      {
+        "sys": { "id": "1" },
+        "fields": {
+          "title": "Orange Cheese Cake",
+          "price": 10.99,
+          "image": { "fields": { "file": { "url": "static/images/orange_cheese_cake.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "2" },
+        "fields": {
+          "title": "Chocolate Forest",
+          "price": 12.99,
+          "image": { "fields": { "file": { "url": "static/images/Chocolate_forest.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "3" },
+        "fields": {
+          "title": "Mango Forest",
+          "price": 12.99,
+          "image": { "fields": { "file": { "url": "static/images/mango_forest.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "4" },
+        "fields": {
+          "title": "brownies",
+          "price": 22.99,
+          "image": { "fields": { "file": { "url": "static/images/brownies.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "5" },
+        "fields": {
+          "title": "Strawberry Cream Cake",
+          "price": 88.99,
+          "image": { "fields": { "file": { "url": "static/images/Strawberry_cream_cake.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "6" },
+        "fields": {
+          "title": "Fresh Fruit Cheese Cake",
+          "price": 32.99,
+          "image": { "fields": { "file": { "url": "static/images/Fresh_fruit_cheese_cake.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "7" },
+        "fields": {
+          "title": "Aurora",
+          "price": 45.99,
+          "image": { "fields": { "file": { "url": "static/images/Aurora.jpg" } } }
+        }
+      },
+      {
+        "sys": { "id": "8" },
+        "fields": {
+          "title": "Carrot Cake",
+          "price": 33.99,
+          "image": { "fields": { "file": { "url": "static/images/Carrot_cake.jpg" } } }
+        }
+      }
+    ]
+  }

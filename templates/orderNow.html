@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+
+        <form  action="/result" method="POST">
+            {% if phoneNumber %}
+                <center>
+                    <h3 style="color: blue;" class="let_space"></h3>
+                </center> 
+
+            {% endif %}
+            
+            <label for="phoneNumber">Enter your phone number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber">
+            </br>
+            </br>
+            {% if password %}
+                <center>
+                    <h3 style="color: blue;" class="let_space"></h3>
+                </center>
+
+            {% endif %}
+
+            <label for="password">Enter your password:</label>
+            <input type="text" id="password" name="password">
+
+            </br></br>
+            <label for="cakes">Choose a cake:</label>
+            <select id="'cakes" name="cakes">
+                <option value="Orange Cheese Cake">Orange Cheese Cake</option>
+                <option value="Chocolate Forest">Chocolate Forest</option>
+                <option value="Mango Forest">Mango Forest</option>
+                <option value="brownies">brownies</option>
+                <option value="Strawberry Cream Cake">Strawberry Cream Cake</option>
+                <option value="Fresh Fruit Cheese Cake">Fresh Fruit Cheese Cake</option>
+                <option value="Aurora">Aurora</option>
+                <option value="Carrot Cake">Carrot Cake</option>
+            </select>
+            </br>
+            </br>
+            <input class="file_submit" type="Submit">
+            <a href="index.html">Sign Up</a>
+
+        </form>
+
+        
+
+        
+
+        
+        <br>
+        <br>
+        <br>
+
+
+    </body>
+</html>

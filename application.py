@@ -1,7 +1,10 @@
 from sqlite3 import connect
 from tabnanny import check
+import logging
+import boto3
 from flask import Flask, render_template, url_for, request, redirect
 import pymysql
+from botocore.exceptions import ClientError
 
 application = Flask(__name__)
 
@@ -82,6 +85,17 @@ def checkUserPassword(cursor, phoneNumber, password):
     else:
         return False
 
+@application.route('/upload', methods=['GET','POST'])
+def upload():
+    file = request.files['myfile'].filename
+    s3 = boto3.resource('s3')
+
+    s3.Bucket('cake-design-recommendation-client').put_object(Key=file, Body=request.files['myfile'])
+
+    return '<h1>File saved to S3</h1>'
+
+    
+
 @application.route('/result',methods=['POST', 'GET'])
 def result():
     output = request.form.to_dict()
@@ -98,7 +112,6 @@ def result():
         return render_template('success.html')
     else:
         return render_template('fail.html')
-
 
 
 if __name__ == "__main__":

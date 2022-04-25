@@ -46,7 +46,7 @@ def chat_with_store():
     output = request.form.to_dict()
     user_name = output["user_name"]
     print(user_name)
-    ws = create_connection("wss://1ltd3i86cl.execute-api.us-east-1.amazonaws.com/production?userid=bob")
+    ws = create_connection("wss://1ltd3i86cl.execute-api.us-east-1.amazonaws.com/production?userid=admin")
     json_data = '{"Msg":"hello","ReceiverID":"admin","action":"sendmsg"}'
     json_object = json.loads(json_data)
     ws.send(json.dumps(json_object))
@@ -57,7 +57,8 @@ def chat_with_store():
         window.alert('{message}')</script></body></html>"
     with open("templates/warning_message.html", "w") as html_file:
         html_file.write(html_content)
-    ws.close()
+    json_data = '{"Msg":"hello","ReceiverID":"admin","action":"sendmsg"}'
+    ws.send(json.dumps(json_object))
     return render_template("/warning_message.html")
     
 

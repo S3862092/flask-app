@@ -59,8 +59,8 @@ def chat_with_store():
         window.alert('{message}')</script></body></html>"
     with open("templates/warning_message.html", "w") as html_file:
         html_file.write(html_content)
+    html_file.close()
     ws.close()
-    message = ''
     return render_template("/warning_message.html")
     
 

@@ -1,5 +1,3 @@
-from sqlite3 import connect
-from tabnanny import check
 import json
 import boto3
 from flask import Flask, render_template, url_for, request, redirect

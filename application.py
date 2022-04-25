@@ -1,10 +1,11 @@
 from sqlite3 import connect
 from tabnanny import check
-import logging
+import json
 import boto3
 from flask import Flask, render_template, url_for, request, redirect
 import pymysql
 from botocore.exceptions import ClientError
+from websocket import create_connection
 
 application = Flask(__name__)
 
@@ -94,12 +95,32 @@ def upload():
 
     return '<h1>File saved to S3</h1>'
 
+@application.route('/chat', methods=['GET'])
+def chat():
+    return render_template('/chat.html')
+
+@application.route('/connect_to_admin',methods=['POST', 'GET'])
+def chat_with_store():
+    output = request.form.to_dict()
+    user_name = output["user_name"]
+    print(user_name)
+    ws = create_connection("wss://1ltd3i86cl.execute-api.us-east-1.amazonaws.com/production?userid=bob")
+    json_data = '{"Msg":"hello","ReceiverID":"admin","action":"sendmsg"}'
+    json_object = json.loads(json_data)
+    ws.send(json.dumps(json_object))
+
+    message = ws.recv()
+    print(message)
+    html_content = f"<!DOCTYPE html><html><body><script>\
+        window.alert('{message}')</script></body></html>"
+    with open("templates/warning_message.html", "w") as html_file:
+        html_file.write(html_content)
+    return render_template("/warning_message.html")
     
 
 @application.route('/result',methods=['POST', 'GET'])
 def result():
     output = request.form.to_dict()
-    print("OUTPUT:",output)
     phoneNumber = output["phoneNumber"]
     password = output["password"]
     cake = output["cakes"]

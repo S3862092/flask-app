@@ -46,7 +46,7 @@ def chat_with_store():
     output = request.form.to_dict()
     user_name = output["user_name"]
     print(user_name)
-    ws = create_connection("wss://1ltd3i86cl.execute-api.us-east-1.amazonaws.com/production?userid=admin")
+    ws = create_connection("wss://1ltd3i86cl.execute-api.us-east-1.amazonaws.com/production?userid={user_name}")
     json_data = '{"Msg":"hello","ReceiverID":"admin","action":"sendmsg"}'
     json_object = json.loads(json_data)
     ws.send(json.dumps(json_object))

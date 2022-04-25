@@ -60,6 +60,7 @@ def chat_with_store():
     with open("templates/warning_message.html", "w") as html_file:
         html_file.write(html_content)
     ws.close()
+    message = ''
     return render_template("/warning_message.html")
     
 

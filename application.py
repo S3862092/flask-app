@@ -57,8 +57,7 @@ def chat_with_store():
         window.alert('{message}')</script></body></html>"
     with open("templates/warning_message.html", "w") as html_file:
         html_file.write(html_content)
-    json_data = '{"Msg":"hello","ReceiverID":"admin","action":"sendmsg"}'
-    ws.send(json.dumps(json_object))
+    ws.close()
     return render_template("/warning_message.html")
     
 
